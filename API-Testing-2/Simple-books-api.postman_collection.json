@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "183cc7a6-1372-4d93-9e4b-d25f63aec8b1",
+		"name": "Simple-books-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40046652"
+	},
+	"item": [
+		{
+			"name": "Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/status",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aurhenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientName\": \"Sanjida Islam\",\r\n    \"clientEmail\": \"mimsanjida229@gmail.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api-clients",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api-clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "08fe5ba5c6b5be638dce82bcc6c9e9a11dba1de447c160d971cb5357b5377fd2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookId\": 4,\r\n    \"customerName\": \"Sanjida Mim\",\r\n    \"name\": \"The Midnight Library\",\r\n    \"author\": \"Matt Haig\",\r\n    \"type\": \"fiction\",\r\n    \"price\": 15.6,\r\n    \"current-stock\": 87,\r\n    \"available\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/orders",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updated_List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "08fe5ba5c6b5be638dce82bcc6c9e9a11dba1de447c160d971cb5357b5377fd2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/orders/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partial_Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "08fe5ba5c6b5be638dce82bcc6c9e9a11dba1de447c160d971cb5357b5377fd2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerName\": \"Sanjida Islam Mim\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/orders/01FKk2NZcXc3Ngug7BJat",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders",
+						"01FKk2NZcXc3Ngug7BJat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "08fe5ba5c6b5be638dce82bcc6c9e9a11dba1de447c160d971cb5357b5377fd2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/orders/PzkC6QN_rImbheb0jmZQa",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders",
+						"PzkC6QN_rImbheb0jmZQa"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
